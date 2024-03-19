@@ -3,7 +3,6 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import serverless from "serverless-http";
 
 const app = express();
 app.use(cors());
@@ -24,6 +23,3 @@ const PORT = process.env.PORT || 1112;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
-
-// Wrap the app with serverless-http
-export const handler = serverless(app);
